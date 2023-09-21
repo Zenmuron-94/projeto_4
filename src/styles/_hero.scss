@@ -1,0 +1,88 @@
+@use 'variaveis';
+.hero{
+    
+    
+    &__vidbkg{
+        position: relative;
+        width: 100%;
+        height: 920px;
+        overflow: hidden;
+        
+        &__video{
+            position: fixed; /* Fixa o vídeo no fundo */
+            right: 0;
+            bottom: 0;
+            min-width: 100%; /* Garante que o vídeo ocupe a largura mínima da tela */
+            min-height: 100%; /* Garante que o vídeo ocupe a altura mínima da tela */
+            width: auto; /* Evita que o vídeo se estique horizontalmente */
+            height: auto; /* Evita que o vídeo se estique verticalmente */
+            z-index: -1; /* Coloca o vídeo atrás de outros elementos */
+        }
+    }
+    
+    
+    &__content{
+
+        
+        
+        &__logo{
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            max-width: 320px;
+            width: 100%;
+
+            @media (max-width: 768px){
+            top: 80%;
+            left: 5%;
+            max-width: 100;
+            width: 100%;
+            
+            }
+        }
+
+        &__btn{
+            position: absolute;
+            padding: 8px;
+            top: 75%;
+            left: 8%;
+            border-radius: 8px;
+            background-color: variaveis.$corBtn;
+            width: 10%;
+            height: 50px;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            @media (max-width: 768px){
+                top: 100%;
+                left: 5%;
+                max-width: 156px;
+                width: 100%;
+                
+                }
+            
+            
+
+            &:hover{
+                background-color: rgba($color: gray, $alpha: .8);
+            }
+        }
+
+        #muteBtn{
+            border-radius: 100%;
+            border: none;
+            background-color: rgba($color: white, $alpha: 1.0);
+            position: absolute;
+            left: 90%;
+            top: 80%;
+            height: 64px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: rgba($color: gray, $alpha: .8);
+            }
+        }
+    }      
+}
